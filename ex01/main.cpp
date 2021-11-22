@@ -23,19 +23,18 @@ int	main()
 {
 	Phonebook	phone(0);
 	char	buff[1024];
+	int		rtrn_cmd;
 
 	while (1)
 	{
 		std::cout << "Please enter ADD, SEARCH or EXIT" << std::endl;
 		std::cin >> buff;
-		if (is_good_command(buff) == 1)
-		{
-			Contact contact;
-			phone.make_add(contact);
-		}
-		else if (is_good_command(buff) == 2)
+		rtrn_cmd = is_good_command(buff);
+		if (rtrn_cmd == 1)
+			phone.make_add();
+		else if (rtrn_cmd == 2)
 			phone.make_search();
-		else if (is_good_command(buff) == 3)
+		else if (rtrn_cmd == 3)
 			return 1;
 	}	
 	return 0;

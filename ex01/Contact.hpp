@@ -15,17 +15,17 @@ class Contact
 
 		void	set_contact(void);
 		void	get_contact(int nbr_contact) const;
-		int		is_too_big(char *str) const;
-		void	print_all_contact(char *str, int contact_n) const;
+		int		is_too_big(std::string str) const;
+		void	print_all_contact(std::string str) const;
 		void	print_contact(void) const;
 	
 	private:
 
-		char	*first_name;
-		char	*last_name;
-		char	*nickname;
-		char	*phone_number;
-		char	*darkest_secret;
+		std::string	first_name;
+		std::string	last_name;
+		std::string	nickname;
+		std::string	phone_number;
+		std::string	darkest_secret;
 };
 
 #endif

@@ -1,16 +1,31 @@
 #include "Phonebook.hpp"
 
-Phonebook::Phonebook(int nbr) : nbr_contact(nbr)
+Phonebook::Phonebook(int nbr) : nbr_contact(nbr), index(nbr)
 {
 	return ;
 }
 
 void	Phonebook::make_add(void)
 {
-	contact[this->nbr_contact].set_contact();
+	std::string confirm;
+
 	if (this->nbr_contact == 8)
-		return ;
-	this->nbr_contact++;
+	{
+		std::cout << "The phonebook is full, do you want to repmlace the oldest contact : yes or no" << std::endl;
+		std::cin >> confirm;
+		while (confirm.find("yes") != 0 || confirm.size() != 3)
+		{
+			if (confirm.compare("no") == 0 && confirm.size() == 2)
+				return ;
+			std::cout << "The phonebook is full, do you want to repmlace the oldest contact : yes or no" << std::endl;
+			std::cin >> confirm;
+		}
+		this->index = 0;
+	}
+	else
+		this->nbr_contact++;
+	contact[this->index].set_contact();
+	this->index++;
 }
 
 void	Phonebook::make_search(void)
@@ -32,8 +47,9 @@ void	Phonebook::make_search(void)
 	}
 	std::cout << "Please enter an index to see his informations" << std::endl;
 	std::cin >> index;
-	while (index > this->nbr_contact || index < 0)
+	while (index > (this->nbr_contact - 1) || index < 0)
 	{
+		index = 0;
 		std::cout << "Please enter an index to see his informations" << std::endl;
 		std::cin >> index;
 	}

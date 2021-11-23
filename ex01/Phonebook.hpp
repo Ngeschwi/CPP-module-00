@@ -20,6 +20,7 @@ class Phonebook
 
 		Contact contact[8];
 		int		nbr_contact;
+		int		index;
 };
 
 #endif

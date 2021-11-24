@@ -13,9 +13,9 @@ void	Phonebook::make_add(void)
 	{
 		std::cout << "The phonebook is full, do you want to repmlace the oldest contact : yes or no" << std::endl;
 		std::cin >> confirm;
-		while (confirm.find("yes") != 0 || confirm.size() != 3)
+		while (confirm.compare("yes") != 0)
 		{
-			if (confirm.compare("no") == 0 && confirm.size() == 2)
+			if (confirm.compare("no") == 0)
 				return ;
 			std::cout << "The phonebook is full, do you want to repmlace the oldest contact : yes or no" << std::endl;
 			std::cin >> confirm;
@@ -30,8 +30,10 @@ void	Phonebook::make_add(void)
 
 void	Phonebook::make_search(void)
 {
-	int	i;
-	int index;
+	std::string	str_index;
+	const char	*const_index;
+	int			index;
+	int			i;
 
 	i = 0;
 	if (this->nbr_contact == 0)
@@ -46,12 +48,19 @@ void	Phonebook::make_search(void)
 		i++;
 	}
 	std::cout << "Please enter an index to see his informations" << std::endl;
-	std::cin >> index;
+	std::cin >> str_index;
+	str_index = str_index.c_str();
+	index = atoi(const_index);
+	if (str_index.size() != 1)
+		index = -1;
 	while (index > (this->nbr_contact - 1) || index < 0)
 	{
-		index = 0;
 		std::cout << "Please enter an index to see his informations" << std::endl;
-		std::cin >> index;
+		std::cin >> str_index;
+		str_index = str_index.c_str();
+		index = atoi(const_index);
+		if (str_index.size() != 1)
+			index = -1;
 	}
 	contact[index].print_contact();
 	return ;

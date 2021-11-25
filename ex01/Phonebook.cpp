@@ -49,7 +49,7 @@ void	Phonebook::make_search(void)
 	}
 	std::cout << "Please enter an index to see his informations" << std::endl;
 	std::cin >> str_index;
-	str_index = str_index.c_str();
+	const_index = str_index.c_str();
 	index = atoi(const_index);
 	if (str_index.size() != 1)
 		index = -1;
@@ -57,11 +57,12 @@ void	Phonebook::make_search(void)
 	{
 		std::cout << "Please enter an index to see his informations" << std::endl;
 		std::cin >> str_index;
-		str_index = str_index.c_str();
+		const_index = str_index.c_str();
 		index = atoi(const_index);
 		if (str_index.size() != 1)
 			index = -1;
 	}
+	std::cout << index << "coucou :" << std::endl;
 	contact[index].print_contact();
 	return ;
 }

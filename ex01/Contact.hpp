@@ -4,7 +4,8 @@
 # include <iostream>
 # include <string>
 # include <stdio.h>
-# include <stdlib.h> 
+# include <stdlib.h>
+# include <iostream>
 # include "Phonebook.hpp"
 
 class Contact

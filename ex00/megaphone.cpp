@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstring> // attention a voir a l'ecole !!!!!!!
 
 int	main(int argc, char **argv)
 {

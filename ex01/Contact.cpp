@@ -7,16 +7,33 @@ Contact::Contact(void)
 
 void	Contact::set_contact(void)
 {
+	std::string	buff;
+
 	std::cout << "First name :" << std::endl;
-	std::cin >> this->first_name;
+	std::getline(std::cin, buff);
+	if (std::cin.eof())
+		exit(0);
+	this->first_name = buff;
 	std::cout << "Last name :" << std::endl;
-	std::cin >> this->last_name;
+	std::getline(std::cin, buff);
+	if (std::cin.eof())
+		exit(0);
+	this->last_name = buff;
 	std::cout << "Nickname:" << std::endl;
-	std::cin >> this->nickname;
+	std::getline(std::cin, buff);
+	if (std::cin.eof())
+		exit(0);
+	this->nickname = buff;
 	std::cout << "Phone number:" << std::endl;
-	std::cin >> this->phone_number;
+	std::getline(std::cin, buff);
+	if (std::cin.eof())
+		exit(0);
+	this->phone_number = buff;
 	std::cout << "Darkest secret :" << std::endl;
-	std::cin >> this->darkest_secret;
+	std::getline(std::cin, buff);
+	if (std::cin.eof())
+		exit(0);
+	this->darkest_secret = buff;
 }
 
 int		Contact::is_too_big(std::string str) const
@@ -59,8 +76,6 @@ void	Contact::get_contact(int contact_n) const
 	this->print_all_contact(this->first_name);
 	this->print_all_contact(this->last_name);
 	this->print_all_contact(this->nickname);
-	this->print_all_contact(this->phone_number);
-	this->print_all_contact(this->darkest_secret);
 	std::cout << std::endl;
 	return ;
 }

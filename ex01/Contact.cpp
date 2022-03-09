@@ -89,6 +89,53 @@ void	Contact::print_contact(void) const
 	std::cout << "Darkest secret :" << std::endl << this->darkest_secret << std::endl;
 }
 
+std::string	Contact::getFirstName(void) const
+{
+	return this->first_name;
+}
+std::string	Contact::getLastName(void) const
+{
+	return this->last_name;
+}
+std::string	Contact::getNickname(void) const
+{
+	return this->nickname;
+}
+std::string	Contact::getPhone(void) const
+{
+	return this->phone_number;
+}
+std::string	Contact::getSecret(void) const
+{
+	return this->darkest_secret;
+}
+
+void	Contact::setFirstName(std::string name)
+{
+	this->first_name = name;
+	return ;
+}
+void	Contact::setLastName(std::string name)
+{
+	this->last_name = name;
+	return ;
+}
+void	Contact::setNickname(std::string name)
+{
+	this->nickname = name;
+	return ;
+}
+void	Contact::setPhone(std::string phone)
+{
+	this->phone_number = phone;
+	return ;
+}
+void	Contact::setSecret(std::string secret)
+{
+	this->darkest_secret = secret;
+	return ;
+}
+
 Contact::~Contact(void)
 {
 	return ;

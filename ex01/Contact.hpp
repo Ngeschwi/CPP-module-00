@@ -14,12 +14,24 @@ class Contact
 		Contact(void);
 		~Contact(void);
 
-		void	set_contact(void);
-		void	get_contact(int nbr_contact) const;
-		int		is_too_big(std::string str) const;
-		void	print_all_contact(std::string str) const;
-		void	print_contact(void) const;
+		void		set_contact(void);
+		void		get_contact(int nbr_contact) const;
+		int			is_too_big(std::string str) const;
+		void		print_all_contact(std::string str) const;
+		void		print_contact(void) const;
+
+		std::string	getFirstName(void) const;
+		std::string	getLastName(void) const;
+		std::string	getNickname(void) const;
+		std::string	getPhone(void) const;
+		std::string	getSecret(void) const;
 	
+		void		setFirstName(std::string name);
+		void		setLastName(std::string name);
+		void		setNickname(std::string name);
+		void		setPhone(std::string phone);
+		void		setSecret(std::string secret);
+
 	private:
 
 		std::string	first_name;

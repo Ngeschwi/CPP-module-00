@@ -11,28 +11,53 @@ void	Contact::set_contact(void)
 
 	std::cout << "First name :" << std::endl;
 	std::getline(std::cin, buff);
-	if (std::cin.eof())
-		exit(0);
+	while (buff.empty())
+	{
+		std::cout << "An information can't be empty" << std::endl;
+		std::getline(std::cin, buff);
+		if (std::cin.eof())
+			exit(0);
+	}
 	this->first_name = buff;
 	std::cout << "Last name :" << std::endl;
 	std::getline(std::cin, buff);
-	if (std::cin.eof())
-		exit(0);
+	while (buff.empty())
+	{
+		std::cout << "A description can't be empty" << std::endl;
+		std::getline(std::cin, buff);
+		if (std::cin.eof())
+			exit(0);
+	}
 	this->last_name = buff;
 	std::cout << "Nickname:" << std::endl;
 	std::getline(std::cin, buff);
-	if (std::cin.eof())
-		exit(0);
+	while (buff.empty())
+	{
+		std::cout << "A description can't be empty" << std::endl;
+		std::getline(std::cin, buff);
+		if (std::cin.eof())
+			exit(0);
+	}
 	this->nickname = buff;
 	std::cout << "Phone number:" << std::endl;
 	std::getline(std::cin, buff);
-	if (std::cin.eof())
-		exit(0);
+	while (buff.empty())
+	{
+		std::cout << "A description can't be empty" << std::endl;
+		std::getline(std::cin, buff);
+		if (std::cin.eof())
+			exit(0);
+	}
 	this->phone_number = buff;
 	std::cout << "Darkest secret :" << std::endl;
 	std::getline(std::cin, buff);
-	if (std::cin.eof())
-		exit(0);
+	while (buff.empty())
+	{
+		std::cout << "A description can't be empty" << std::endl;
+		std::getline(std::cin, buff);
+		if (std::cin.eof())
+			exit(0);
+	}
 	this->darkest_secret = buff;
 }
 
